@@ -9,12 +9,20 @@ let listProducts = [
   {
     id: 1,
     name: 'Product 1',
-    price: 10
+    price: 10,
+    description: "Descrição de teste 1"
   },
   {
     id: 2,
     name: 'Product 2',
-    price: 100
+    price: 100,
+    description: "Descrição de teste 2"
+  },
+  {
+    id: 3,
+    name: 'Product 3',
+    price: 50,
+    description: "Descrição de teste 3"
   }
 ];
 
@@ -42,6 +50,9 @@ app.get('/products', (req, res) => {
 
 app.get('/contact', (req, res) => {
   res.render('contact.html');
+});
+app.get('/renan', (req, res) => {
+  res.render('renan.html');
 });
 
 app.post('/send', (req, res) => {

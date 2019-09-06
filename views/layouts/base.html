@@ -6,16 +6,19 @@
       {% block title%} {% endblock %}
     </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    {% block styles %}
+    {% endblock %}
   </head>
   <body>
     <div class="container">
       <a href="/" class="btn btn-link">Home</a>
       <a href="/products" class="btn btn-link">Produtos</a>
+        <a href="/renan" class="btn btn-link">Página do Renan</a>
       {% block content %}
       {% endblock %}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
-    {% block script %}    
+    {% block script %}
     {% endblock %}
   </body>
 </html>
