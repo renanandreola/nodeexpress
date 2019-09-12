@@ -6,18 +6,32 @@
       {% block title%} {% endblock %}
     </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     {% block styles %}
     {% endblock %}
   </head>
   <body>
     <div class="container">
-      <a href="/" class="btn btn-link">Home</a>
-      <a href="/products" class="btn btn-link">Produtos</a>
-        <a href="/renan" class="btn btn-link">Página do Renan</a>
+      <nav>
+        <a href="/" class="btn btn-link">Home</a>
+        <a href="/products" class="btn btn-link">Produtos</a>
+        <a href="/contact" class="btn btn-link">Contato</a>
+        <a href="/artur" class="btn btn-link">Pagina do Artur</a>
+        <span class="float-right">
+          <a href="/cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge badge-danger" id="cart-items"></span>
+          </a>
+        </span>
+      </nav>
+
+      <div>
       {% block content %}
       {% endblock %}
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="/js/base.js" charset="utf-8"></script>
     {% block script %}
     {% endblock %}
   </body>

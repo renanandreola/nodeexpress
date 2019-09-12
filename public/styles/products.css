@@ -1,7 +1,6 @@
 .products {
   list-style: none;
 }
-
 .products li {
   float: left;
   margin: 10px 20px;

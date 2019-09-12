@@ -5,26 +5,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 
-let listProducts = [
-  {
-    id: 1,
-    name: 'Product 1',
-    price: 10,
-    description: "Descrição de teste 1"
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    price: 100,
-    description: "Descrição de teste 2"
-  },
-  {
-    id: 3,
-    name: 'Product 3',
-    price: 50,
-    description: "Descrição de teste 3"
-  }
-];
+let listProducts = require('./data/products.json');
 
 
 nunjucks.configure('views', {
@@ -51,8 +32,9 @@ app.get('/products', (req, res) => {
 app.get('/contact', (req, res) => {
   res.render('contact.html');
 });
-app.get('/renan', (req, res) => {
-  res.render('renan.html');
+
+app.get('/artur', function (req, res) {
+  res.render('artur.html');
 });
 
 app.post('/send', (req, res) => {
@@ -76,10 +58,9 @@ app.post('/send', (req, res) => {
       console.log(error);
     } else {
       console.log('Email sent: ' + info.response);
-    }
+    }    
     res.send('ok');
   });
-
 });
 
 app.get('/product/:id', (req, res) => {
@@ -87,6 +68,20 @@ app.get('/product/:id', (req, res) => {
     return item.id == req.params.id
   })
   res.render('product.html', {product: product});
+});
+
+// APIs
+app.get('/api/products', (req, res) => {
+  res.send(listProducts);
+});
+
+app.get('/api/product/:id', (req, res) => {
+  const product = listProducts.find((item) => {
+    return item.id == req.params.id
+  })
+  res.send(product);
+
+
 });
 
 app.listen(3000, () => {
