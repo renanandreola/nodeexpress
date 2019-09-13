@@ -37,6 +37,10 @@ app.get('/artur', function (req, res) {
   res.render('artur.html');
 });
 
+app.get('/cart', function (req, res) {   
+  res.render('cart.html');
+});
+
 app.post('/send', (req, res) => {
   var email = 'artur.nzk@gmail.com';
   const transporter = nodemailer.createTransport({
@@ -58,7 +62,7 @@ app.post('/send', (req, res) => {
       console.log(error);
     } else {
       console.log('Email sent: ' + info.response);
-    }    
+    }
     res.send('ok');
   });
 });

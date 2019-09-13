@@ -1,0 +1,59 @@
+{% extends './layouts/base.html' %}
+
+{% block content %}
+
+<div class="container">
+<div class="col-12">
+    <h1 class="glyphicon glyphicon-shopping-cart">Carrinho de compras</h1>
+  <br>
+  <br>
+	<div class="row">
+		<div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70"></div>
+
+    <div class="col-4">
+			<h4 class="product-name"><strong>NOME DO PRODUTO</strong></h4><h4><small>Descrição do produto:</small></h4>
+		</div>
+		<div class="col-6">
+		    <div class="col-6 text-right">
+				      <h6><strong>x1 <span class="text-muted">(quant.)</span></strong></h6>
+			  </div>
+			  <div class="col-xs-4">
+				      <input type="text" class="form-control input-sm" value="">
+			  </div>
+			  <div class="col-2">
+				      <button type="button" class="btn btn-link btn-xs">
+                <span class="glyphicon glyphicon-trash"></span>
+				      </button>
+			  </div>
+		</div>
+	</div>
+  <div class="row">
+		<div class="text-center">
+      <div class="col-xs-3">
+				<button type="button" class="btn btn-primary">Atualizar carrinho</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+			<div class="row text-center">
+				<div class="col-10">
+					<h4 class="text-right" id="total">Total <strong>$50.00</strong></h4>
+				</div>
+				    <div class="col-xs-3">
+							<button type="button" class="btn btn-success">Finalizar pedido</button>
+						</div>
+					</div>
+				</div>
+
+	<hr>
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block script %}
+  <script src="/js/cart.js" charset="utf-8"></script>
+{% endblock %}
